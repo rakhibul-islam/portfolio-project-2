@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #ca8a04;
+  --secondary-color: #1f2937;
+  --text-dark: #a855f7;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  background-color: #fafafa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.nav_content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+nav .checkbox {
+  display: none;
+}
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: left 0.3s;
+  list-style: none;
+}
+ul li a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+  ul {
+    position: absolute;
+    height: calc(100vh - 85px);
+    width: 100%;
+    top: 85px;
+    left: -100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    background-color: var(--extra-light);
+  }
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+  nav li a {
+    font: 1.25rem;
+  }
+}
